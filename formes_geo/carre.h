@@ -11,6 +11,9 @@ class Carre:public Figure
 	Carre(int x, int y, int cote);
 	Carre(const Carre&);
     void setCote(int);
-	int getCote() const;
+	virtual int getCote() const;
+	virtual float CalculerPerimetre() const;
+	virtual float CalculerAire() const;
+
 };
 #endif

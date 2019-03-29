@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-const float Pi=(float)3.1416;
+const float Pi=(float)3.14159265359;
 
 class Figure
 {
@@ -19,6 +19,10 @@ public:
 	Figure(const Figure&);
 	int getX() const;
 	int getY() const;
+	virtual int getCote() const;
+	virtual int getRayon() const;
+	virtual float CalculerPerimetre() const;
+	virtual float CalculerAire() const;
 	void setPoint(int X, int Y);
 	void setX(int);
 	void setY(int);

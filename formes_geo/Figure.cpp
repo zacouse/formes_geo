@@ -57,3 +57,22 @@ void Figure::Deselectionner()
 	estSelectionne = false;
 }
 
+int Figure::getCote() const
+{
+	return 0;
+}
+
+int Figure::getRayon() const
+{
+	return 0;
+}
+
+float Figure::CalculerPerimetre() const
+{
+	return 0;
+}
+
+float Figure::CalculerAire() const
+{
+	return 0;
+}
