@@ -17,17 +17,21 @@ public:
 	Figure();
 	Figure(int x, int y);
 	Figure(const Figure&);
+	virtual ~Figure();
 	int getX() const;
 	int getY() const;
 	virtual int getCote() const;
 	virtual int getRayon() const;
-	virtual float CalculerPerimetre() const;
-	virtual float CalculerAire() const;
+	virtual void setCote(int);
+	virtual void setRayon(int);
+	virtual float CalculerPerimetre() const=0;
+	virtual float CalculerAire() const=0;
 	void setPoint(int X, int Y);
 	void setX(int);
 	void setY(int);
 	bool EstSelectionne();	
 	void Deselectionner();
+	virtual void Selectionner(int inX,int inY)=0;
 };
 
 #endif
