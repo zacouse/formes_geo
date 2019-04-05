@@ -334,6 +334,8 @@ namespace formes_geo {
 				 int y = figureCourante->getY();
 				 int rayon = figureCourante->getRayon();
 				 int cote = figureCourante->getCote();
+				 int hauteur = figureCourante->getHauteur();
+				 int largeur = figureCourante->getLargeur();
 
 				 if (figureCourante->EstSelectionne() == false)
 				 {
@@ -346,6 +348,8 @@ namespace formes_geo {
 					 textY->Text = y.ToString();
 					 textCote->Text = cote.ToString();
 					 textRayon->Text = rayon.ToString();
+					 txt_hauteur->Text = hauteur.ToString();
+					 txt_largeur->Text = largeur.ToString();
 				 }
 				 //donnez les bonnes valeurs à ces variables
 				 //vous devez utiliser les valeurs qui se trouvent dans figureCourante
