@@ -229,6 +229,7 @@ namespace formes_geo {
 		comboFigure->Items->Add("");
 		comboFigure->Items->Add("Carre");
 		comboFigure->Items->Add("Cercle");
+		comboFigure->Items->Add("Rectangle");
 		figureCourante = NULL;
 		InitialiserTextBox();
 	}
@@ -254,6 +255,7 @@ namespace formes_geo {
 			{
 				figureCourante = new Cercle(Convert::ToInt32(textX->Text), Convert::ToInt32(textY->Text), Convert::ToInt32(textRayon->Text));
 			}
+			else if (comboFigure->Text == "Rectangle")
 			if (figureCourante != NULL)
 			{
 				lesFigures.AjouterFigure(figureCourante);
