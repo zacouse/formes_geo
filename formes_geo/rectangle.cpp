@@ -44,12 +44,12 @@ string FormeRectangle::getType() const
 {
 	return "Rectangle";
 }
-float FormeRectangle::CalculerAire()
+float FormeRectangle::CalculerAire() const
 {
 	return (float)(largeur*hauteur);
 }
 
-float FormeRectangle::CalculerPerimetre()
+float FormeRectangle::CalculerPerimetre() const
 {
 	return (float)(largeur*2+hauteur*2);
 }
