@@ -296,6 +296,8 @@ namespace formes_geo {
 				 textY->Text = "0";
 				 textCote->Text = "0";
 				 textRayon->Text = "0";
+				 txt_hauteur->Text = "0";
+				 txt_largeur->Text = "0";
 			 }
 
 	private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs^  e) {
@@ -312,6 +314,9 @@ namespace formes_geo {
 				figureCourante = new Cercle(Convert::ToInt32(textX->Text), Convert::ToInt32(textY->Text), Convert::ToInt32(textRayon->Text));
 			}
 			else if (comboFigure->Text == "Rectangle")
+			{
+				figureCourante = new FormeRectangle(Convert::ToInt32(textX->Text), Convert::ToInt32(textY->Text), Convert::ToInt32(txt_largeur->Text), Convert::ToInt32(txt_hauteur->Text));
+			}
 			if (figureCourante != NULL)
 			{
 				lesFigures.AjouterFigure(figureCourante);
