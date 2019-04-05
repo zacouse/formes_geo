@@ -96,3 +96,19 @@ void Figure::setRayon(int inRayon)
 {
 
 }
+void Figure::setHauteur(int inHauteur)
+{
+
+}
+void Figure::setLargeur(int inLargeur)
+{
+
+}
+int Figure::getHauteur() const
+{
+	return 0;
+}
+int Figure::getLargeur() const
+{
+	return 0;
+}
