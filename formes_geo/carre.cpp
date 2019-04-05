@@ -48,3 +48,8 @@ void Carre::Selectionner(int inX,int inY)
 		estSelectionne = true;
 	}
 }
+
+string Carre::getType() const
+{
+	return "Carre";
+}
