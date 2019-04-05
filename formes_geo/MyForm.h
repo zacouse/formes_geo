@@ -69,6 +69,7 @@ namespace formes_geo {
 
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::TextBox^  txt_hauteur;
+	private: System::Windows::Forms::Button^  btnAire;
 
 	private: System::Windows::Forms::Button^  btnModifie;
 
@@ -96,6 +97,7 @@ namespace formes_geo {
 				 this->txt_largeur = (gcnew System::Windows::Forms::TextBox());
 				 this->label6 = (gcnew System::Windows::Forms::Label());
 				 this->txt_hauteur = (gcnew System::Windows::Forms::TextBox());
+				 this->btnAire = (gcnew System::Windows::Forms::Button());
 				 this->SuspendLayout();
 				 // 
 				 // label3
@@ -236,11 +238,22 @@ namespace formes_geo {
 				 this->txt_hauteur->Size = System::Drawing::Size(37, 20);
 				 this->txt_hauteur->TabIndex = 31;
 				 // 
+				 // btnAire
+				 // 
+				 this->btnAire->Location = System::Drawing::Point(304, 73);
+				 this->btnAire->Name = L"btnAire";
+				 this->btnAire->Size = System::Drawing::Size(121, 23);
+				 this->btnAire->TabIndex = 33;
+				 this->btnAire->Text = L"Aire des figures";
+				 this->btnAire->UseVisualStyleBackColor = true;
+				 this->btnAire->Click += gcnew System::EventHandler(this, &MyForm::btnAire_Click);
+				 // 
 				 // MyForm
 				 // 
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->ClientSize = System::Drawing::Size(892, 490);
+				 this->Controls->Add(this->btnAire);
 				 this->Controls->Add(this->label6);
 				 this->Controls->Add(this->txt_hauteur);
 				 this->Controls->Add(this->label5);
@@ -283,6 +296,8 @@ namespace formes_geo {
 				 textY->Text = "0";
 				 textCote->Text = "0";
 				 textRayon->Text = "0";
+				 txt_hauteur->Text = "0";
+				 txt_largeur->Text = "0";
 			 }
 
 	private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs^  e) {
@@ -299,6 +314,9 @@ namespace formes_geo {
 				figureCourante = new Cercle(Convert::ToInt32(textX->Text), Convert::ToInt32(textY->Text), Convert::ToInt32(textRayon->Text));
 			}
 			else if (comboFigure->Text == "Rectangle")
+			{
+				figureCourante = new FormeRectangle(Convert::ToInt32(textX->Text), Convert::ToInt32(textY->Text), Convert::ToInt32(txt_largeur->Text), Convert::ToInt32(txt_hauteur->Text));
+			}
 			if (figureCourante != NULL)
 			{
 				lesFigures.AjouterFigure(figureCourante);
@@ -416,5 +434,17 @@ namespace formes_geo {
 		DessinerTout();
 	}
 
-	};
+	private: System::Void btnAire_Click(System::Object^  sender, System::EventArgs^  e) {
+		int cptFigure = 0;
+		listBoxFigures->Items->Clear();
+		listBoxFigures->Items->Add("Aire des figures:");
+		figureCourante = lesFigures.ObtenirFigure(cptFigure);
+		while (figureCourante != nullptr)
+		{
+			listBoxFigures->Items->Add(figureCourante->CalculerAire());
+			cptFigure++;
+			figureCourante = lesFigures.ObtenirFigure(cptFigure);
+		}
+	}
+};
 }
