@@ -355,6 +355,7 @@ namespace formes_geo {
 					 textRayon->Text = rayon.ToString();
 					 txt_hauteur->Text = hauteur.ToString();
 					 txt_largeur->Text = largeur.ToString();
+					 MessageBox::Show(gcnew String(figureCourante->getType().c_str()));
 				 }
 				 //donnez les bonnes valeurs à ces variables
 				 //vous devez utiliser les valeurs qui se trouvent dans figureCourante
