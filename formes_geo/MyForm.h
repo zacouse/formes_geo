@@ -363,9 +363,13 @@ namespace formes_geo {
 				 {
 					 objetGraphique->DrawRectangle(crayon, x, y, cote, cote);
 				 }
-				 else
+				 else if (rayon != 0)
 				 {
 					 objetGraphique->DrawEllipse(crayon, x, y, rayon * 2, rayon * 2);
+				 }
+				 else
+				 {
+					 objetGraphique->DrawRectangle(crayon, x, y, largeur, hauteur);
 				 }
 				 delete crayon;
 				 delete objetGraphique;
