@@ -40,6 +40,10 @@ int FormeRectangle::getHauteur() const
 {
 	return hauteur;
 }
+string FormeRectangle::getType() const
+{
+	return "Rectangle";
+}
 float FormeRectangle::CalculerAire()
 {
 	return (float)(largeur*hauteur);

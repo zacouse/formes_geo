@@ -22,8 +22,12 @@ public:
 	int getY() const;
 	virtual int getCote() const;
 	virtual int getRayon() const;
+	virtual int getLargeur() const;
+	virtual int getHauteur() const;
 	virtual void setCote(int);
 	virtual void setRayon(int);
+	virtual void setLargeur(int);
+	virtual void setHauteur(int);
 	virtual float CalculerPerimetre() const=0;
 	virtual float CalculerAire() const=0;
 	void setPoint(int X, int Y);
