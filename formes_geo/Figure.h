@@ -24,6 +24,7 @@ public:
 	virtual int getRayon() const;
 	virtual int getLargeur() const;
 	virtual int getHauteur() const;
+	virtual string getType() const;
 	virtual void setCote(int);
 	virtual void setRayon(int);
 	virtual void setLargeur(int);

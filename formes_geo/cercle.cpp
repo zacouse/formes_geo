@@ -30,6 +30,11 @@ int Cercle::getRayon() const
 	return rayon;
 }
 
+string Cercle::getType() const
+{
+	return"Cercle";
+}
+
 float Cercle::CalculerPerimetre() const
 {
 	return 2*Pi*rayon;
